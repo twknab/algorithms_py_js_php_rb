@@ -58,3 +58,19 @@ function fizz_buzz() {
   }
 }
 fizz_buzz();
+
+// 5. Is Prime
+function is_prime($num) {
+  if ($num % $num == 0 AND $num % 1 == 0) {
+    echo "TRUE" . "\n";
+    return TRUE;
+  }
+  else {
+    echo "FALSE" . "\n";
+    return FALSE;
+  }
+}
+is_prime(1);
+is_prime(2);
+is_prime(3);
+is_prime(4.5);

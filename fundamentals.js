@@ -58,3 +58,18 @@ function fizzBuzz() {
   }
 }
 fizzBuzz();
+
+// 5. IsPrime
+function isPrime(num){
+  if (num % num === 0 && num % 1 === 0) {
+    console.log(true);
+    return true;
+  } else {
+    console.log(false);
+    return false;
+  }
+} 
+isPrime(1);
+isPrime(2);
+isPrime(3);
+isPrime(4.5);

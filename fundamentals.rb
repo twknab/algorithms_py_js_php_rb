@@ -58,3 +58,18 @@ def fizz_buzz()
   end
 end
 fizz_buzz
+
+# 5. IsPrime
+def is_prime(num)
+  if (num % num == 0 && num % 1 == 0)
+    puts true
+    return true
+  else
+    puts false
+    return false
+  end
+end
+is_prime(1)
+is_prime(2)
+is_prime(3)
+is_prime(4.5)

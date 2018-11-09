@@ -44,3 +44,15 @@ def fizz_buzz():
     if (i % 3 == 0 and i % 5 == 0):
       print("fizz-buzz")
 fizz_buzz()
+
+# 5. Is Prime
+def is_prime(num):
+  if num % num == 0 and num % 1 == 0:
+    print(True)
+    return True
+  else:
+    print(False)
+    return False
+is_prime(1)
+is_prime(2)
+is_prime(2.5)
