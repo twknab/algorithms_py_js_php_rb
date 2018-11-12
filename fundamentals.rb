@@ -98,7 +98,6 @@ def sum_to_one_digit(num)
   puts sum
   return sum
 end
-
 sum_to_one_digit 928
 sum_to_one_digit(1.5);
 sum_to_one_digit(-1.5);

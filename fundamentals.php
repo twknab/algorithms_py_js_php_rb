@@ -104,7 +104,6 @@ function sum_to_one_digit($num) {
   echo $sum . "\n";
   return $sum;
 }
-
 sum_to_one_digit(928);
 sum_to_one_digit(1.5);
 sum_to_one_digit(-1.5);
