@@ -46,10 +46,10 @@ function threesAndFives() {
 // 4. FizzBuzz
 function fizzBuzz() {
   for (let i = 1; i <= 100; i++) {
-    if (i % 3 === 0 && !(i % 5 === 0)) {
+    if (i % 3 === 0 && (i % 5 !== 0)) {
       console.log("fizz");
     }
-    if (i % 5 === 0 && !(i % 3 === 0)) {
+    if (i % 5 === 0 && (i % 3 !== 0)) {
       console.log("buzz");
     }
     if ((i % 5 === 0) && (i % 3 === 0)) {
@@ -73,3 +73,35 @@ isPrime(1);
 isPrime(2);
 isPrime(3);
 isPrime(4.5);
+
+// 6. Sum to One Digit:
+function sumToOneDigit(num) {
+  if (num < 1) {
+    console.log("Num must be positive integer");
+    return false;
+  }
+  if (!Number.isInteger(num)) {
+    console.log("Num must be integer only");
+    return false;
+  }
+
+  function getSum(integer) {
+    let digitSum = 0;
+    integer = integer.toString();
+    for (let i = 0; i < integer.length; i++) {
+      digitSum += Number(integer[i]);
+    }
+    return digitSum;
+  }
+
+  let sum = getSum(num);
+  while (sum.toString().length > 1) {
+    sum = getSum(sum);
+  }
+  console.log(sum);
+  return sum;
+}
+sumToOneDigit(928);
+sumToOneDigit(1.5);
+sumToOneDigit(-1.5);
+sumToOneDigit(399);

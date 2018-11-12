@@ -74,3 +74,38 @@ is_prime(1);
 is_prime(2);
 is_prime(3);
 is_prime(4.5);
+
+// 6. Sum to One Digit
+function sum_to_one_digit($num) {
+  if ($num < 1) {
+    echo "Num must be a positive integer" . "\n";
+    return FALSE;
+  }
+  if (!(filter_var($num, FILTER_VALIDATE_INT))) {
+    echo "Num must be an integer (no float, etc)" . "\n";
+    return FALSE;
+  }
+  /*
+  Note that in PHP, nesting a new function within an existing one still adds the new function to the global scope. Therfor, we use an anonymous function below (stored as a $variable). Note that when we call this function, we must use the dollar sign ($).
+  */
+  $get_sum = function ($integer) {
+    $digit_sum = 0;
+    $integer = strval($integer);
+    for ($i = 0; $i < strlen($integer); $i++) {
+      $digit_sum += intval($integer[$i]);
+    }
+    return $digit_sum;
+  };
+
+  $sum = $get_sum($num);
+  while (strlen(strval($sum)) > 1) {
+    $sum = $get_sum($sum);
+  }
+  echo $sum . "\n";
+  return $sum;
+}
+
+sum_to_one_digit(928);
+sum_to_one_digit(1.5);
+sum_to_one_digit(-1.5);
+sum_to_one_digit(399);

@@ -56,3 +56,39 @@ def is_prime(num):
 is_prime(1)
 is_prime(2)
 is_prime(2.5)
+
+# 6. Sum to One Digit
+def sum_to_one_digit(num):
+  # Edge case checks:
+  if num < 1:
+    print("Num must be a positive integer")
+    return False
+  if type(num) is not int:
+    print("Sorry, Num must be a positive integer")
+    return False
+  
+  def get_sum(integer):
+    # Initialize sum as 0
+    sum = 0 
+    # Convert integer to string
+    integer = str(integer)
+    # Iterate over each integer and sum
+    for x in integer:
+      sum += int(x)
+    print("Sum so far: {}".format(sum))
+    return sum
+  
+  '''
+  Get sum of all integers in num provided. While the number of digits in the sum is greater than 1 digit, continue summing each integer, until the sum finally reaches 1 digit
+  '''
+
+  sum = get_sum(num)
+  while len(str(sum)) > 1:
+    sum = get_sum(sum)
+
+  print(sum)
+  return sum
+sum_to_one_digit(928)
+sum_to_one_digit(1.5)
+sum_to_one_digit(-1.5)
+sum_to_one_digit(399)

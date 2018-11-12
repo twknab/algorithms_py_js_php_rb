@@ -73,3 +73,33 @@ is_prime(1)
 is_prime(2)
 is_prime(3)
 is_prime(4.5)
+
+# 6. Sum to One Digit
+def sum_to_one_digit(num)
+  if num < 1 or not num.is_a? Integer
+    puts "Num must be positive integer"
+    return false;
+  end
+
+  get_sum = ->(intgr) {
+    digit_sum = 0
+    intgr = intgr.to_s.split('')
+    intgr.each do |i|
+      digit_sum += i.to_i
+    end
+    return digit_sum
+  }
+
+  sum = get_sum.call(num)
+  while sum.to_s.length > 1 do
+    sum = get_sum.call(sum)
+  end
+
+  puts sum
+  return sum
+end
+
+sum_to_one_digit 928
+sum_to_one_digit(1.5);
+sum_to_one_digit(-1.5);
+sum_to_one_digit(399);
