@@ -1,4 +1,4 @@
-<?php 
+<?php
 // 1. Push Front
 function push_front($arr, $val) {
   $i = sizeof($arr);
@@ -19,3 +19,15 @@ function push_front($arr, $val) {
 push_front([1,2,3], 9);
 push_front([], 1);
 push_front([1], 2);
+
+// 2. Pop Front
+function pop_front($arr) {
+  if (sizeof($arr) < 1) {
+    echo "This array is empty" . "\n";
+    return FALSE;
+  }
+  echo $arr[0] . "\n";
+  return $arr[0];
+}
+pop_front([]);
+pop_front([1,2,3]);

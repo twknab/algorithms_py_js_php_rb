@@ -17,3 +17,15 @@ end
 push_front([1,2,3], 9)
 push_front([], 1)
 push_front([1], 2)
+
+# 2. Pop Front
+def pop_front arr
+  if arr.empty?
+    puts "Array is empty"
+    return false
+  end
+  puts arr[0]
+  return arr[0]
+end
+pop_front []
+pop_front [1,2,3]

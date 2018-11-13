@@ -15,3 +15,5 @@
 # Arrays
 
 1. Push Front: Given an array and an additionalv alue, insert this value at the beginning of the array. Do this without any built-in methods if you can.
+
+2. Pop Front: Return the first value at the beginning of an array.

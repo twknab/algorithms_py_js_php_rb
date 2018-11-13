@@ -19,3 +19,12 @@ push_front([1,2,3], 9)
 push_front([], 1)
 push_front([1], 2)
 
+# 2. Pop Front
+def pop_front(arr):
+  if len(arr) < 1:
+    print("This array is empty")
+    return False
+  print(arr[0])
+  return arr[0]
+pop_front([])
+pop_front([1,2,3])
