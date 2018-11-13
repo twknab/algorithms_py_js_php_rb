@@ -11,3 +11,7 @@
 5. IsPrime: Given an integer, return whether an integer is prime or not. Prime numbers are only divisible by themselves and 1.
 
 6. Sum to One Digit: Implement a function which given an integer, sums the integer's digits, consecutively (repeatedly, over and over again) until the sum is only one digit. Example) Given the number 928, 9 + 2 + 8 = 19; 1 + 9 = 10; 1 + 0 = 1 (return 1)
+
+# Arrays
+
+1. Push Front: Given an array and an additionalv alue, insert this value at the beginning of the array. Do this without any built-in methods if you can.
