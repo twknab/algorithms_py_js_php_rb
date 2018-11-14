@@ -29,3 +29,31 @@ function popFront(arr) {
 }
 popFront([]);
 popFront([1,2,3]);
+
+// 3. Insert At:
+function insertAt(arr, idx, val) {
+  if (arr.length < 1) {
+    arr = Array(idx + 1).fill(undefined);
+    arr[idx] = val;
+    console.log(arr);
+    return arr;
+  }
+  if (idx < 0) {
+    console.log("Index must be positive");
+    return false;
+  }
+  let i = arr.length;
+  arr[i] = undefined;
+  while (i > idx) {
+    arr[i] = arr[i - 1];
+    i--;
+  }
+  arr[i] = val;
+  console.log(arr);
+  return arr;
+}
+insertAt([], 9, 9);
+insertAt([1, 2, 3], 1, 9);
+insertAt([1, 2, 3], -1, 19);
+insertAt([1, 2, 3, 4, 5, 6, 7], 4, 20);
+insertAt([1,2,3,4,5], 0, "X");

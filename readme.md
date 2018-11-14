@@ -17,3 +17,5 @@
 1. Push Front: Given an array and an additionalv alue, insert this value at the beginning of the array. Do this without any built-in methods if you can.
 
 2. Pop Front: Return the first value at the beginning of an array.
+
+3. Insert At: Given an array, index and additional value, insert the value into the array at given index. Do this without using built-in array methods if you can.
