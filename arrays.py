@@ -6,7 +6,8 @@ def push_front(arr, val):
     print(arr)
     return arr
 
-  # Extend array with last index value, and then loop backwards moving values to forward an index. When complete, add new value to first index of array.
+  # Extend array with last index value, then loop backwards moving values forward. 
+  # When complete, add new value to first index of array.
   i = len(arr)-1
   arr.append(arr[i])
   while i > 0:
@@ -15,7 +16,7 @@ def push_front(arr, val):
   arr[i] = val
   print(arr)
   return arr
-push_front([1,2,3], 9)
+push_front([1, 2, 3], 9)
 push_front([], 1)
 push_front([1], 2)
 
@@ -27,7 +28,7 @@ def pop_front(arr):
   print(arr[0])
   return arr[0]
 pop_front([])
-pop_front([1,2,3])
+pop_front([1, 2, 3])
 
 # 3. Insert At
 def insert_at(arr, idx, val):
@@ -53,9 +54,9 @@ def insert_at(arr, idx, val):
   print(arr)
   return arr  
 insert_at([], 9, 9)
-insert_at([1,2,3], 1, 9)
-insert_at([1,2,3], -1, 19)
-insert_at([1,2,3,4,5,6,7], 4, 20)
+insert_at([1, 2, 3], 1, 9)
+insert_at([1, 2, 3], -1, 19)
+insert_at([1, 2, 3, 4, 5, 6, 7], 4, 20)
 
 # 4. RemoveAt
 def remove_at(arr, idx):
@@ -63,13 +64,24 @@ def remove_at(arr, idx):
     print("Index must be positive value and list provided must not be empty")
     return False
   for i, val in enumerate(arr):
-    print("The value is: {}, The index is: {}, Index seeking: {}".format(val, i, idx))
+    # print("The value is: {}, The index is: {}, Index seeking: {}".format(val, i, idx))
     if i == idx:
       print(val)
       return val
   print("Index value does not exist in array")
   return False
-remove_at([1,2,3,4], 2)
-remove_at([1,2,3,4], 4)
+remove_at([1, 2, 3, 4], 2)
+remove_at([1, 2, 3, 4], 4)
+
+# 5. Filter Range
+def filter_range(arr, min, max):
+  for i, val in enumerate(arr):
+    if min <= val <= max:
+      # loop to end of array shifting values to the left
+  # examine array -- delete any duplicate values?
+  print(arr)
+
+filter_range([1, 2, 3, 4, 5], 2, 4)
+
 
 
