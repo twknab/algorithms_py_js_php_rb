@@ -19,3 +19,5 @@
 2. Pop Front: Return the first value at the beginning of an array.
 
 3. Insert At: Given an array, index and additional value, insert the value into the array at given index. Do this without using built-in array methods if you can.
+
+4. Remove At: Given an array and index of an array, remove and return the array value at that index. Do this without using any built-in methods except pop() (JS) if you can.

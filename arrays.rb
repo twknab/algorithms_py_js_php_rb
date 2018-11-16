@@ -31,6 +31,7 @@ pop_front []
 pop_front [1,2,3]
 
 # 3. Insert At
+# Note: I know this is a long winded solution was just trying something with while loops.
 def insert_at arr, idx, val
   if arr.empty?
     arr = Array.new(idx + 1)
@@ -58,3 +59,24 @@ insert_at([1, 2, 3], 1, 9)
 insert_at([1, 2, 3], -1, 19)
 insert_at([1, 2, 3, 4, 5, 6, 7], 4, 20)
 insert_at([1,2,3,4,5], 0, "X")
+
+# 4. Remove At
+def remove_at arr, idx
+  if (arr.count < 1 or idx < 0)
+    puts "Array must contain values and index must be positive"
+    return false
+  end
+  arr.each_with_index do |val, i|
+    if i === idx
+      puts val
+      return val
+    end
+  end
+  puts "Index value not found in array"
+  return false
+end
+remove_at([], 5)
+remove_at([1,2,3], 5)
+remove_at([1,2,3], 0)
+remove_at([1,2,3,10,12,15,20,25], 4)
+remove_at([1,2,3,10,12,15,20,25], -1)

@@ -34,6 +34,7 @@ pop_front([1,2,3]);
 
 // 3. Insert At:
 function insert_at($arr, $idx, $val) {
+  // Note: I know this is a long winded solution was just trying something with while loops.
   // If array is empty, create null values and add val to idx
   if (sizeof($arr) < 1) {
     $arr = array_fill(0, $idx + 1, NULL);
@@ -62,3 +63,24 @@ insert_at([], 9, 9);
 insert_at([1,2,3], 1, 9);
 insert_at([1, 2, 3], -1, 19);
 insert_at([1, 2, 3, 4, 5, 6, 7], 4, 20);
+
+// 4. Remove At:
+function remove_at($arr, $idx) {
+  if (sizeof($arr) < 1 || $idx < 0) {
+    echo "Array must not be empty and Index value must not be negative"  . "\n";
+    return FALSE;
+  }
+  for ($i = 0; $i < sizeof($arr); $i++) {
+    if ($i == $idx) {
+      echo $arr[$i] . "\n";
+      return $arr[$i];
+    }
+  }
+  echo "Index does not exist in array"  . "\n";
+  return FALSE;
+}
+remove_at([], 10);
+remove_at([1,2,3], 10);
+remove_at([1,2,3], 2);
+remove_at([1,2,3], 0);
+remove_at([1,2,3], -10);

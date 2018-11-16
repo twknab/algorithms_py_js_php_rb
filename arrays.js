@@ -32,6 +32,7 @@ popFront([1,2,3]);
 
 // 3. Insert At:
 function insertAt(arr, idx, val) {
+  // Note: I know this is a long winded solution was just trying something with while loops.
   if (arr.length < 1) {
     arr = Array(idx + 1).fill(undefined);
     arr[idx] = val;
@@ -57,3 +58,23 @@ insertAt([1, 2, 3], 1, 9);
 insertAt([1, 2, 3], -1, 19);
 insertAt([1, 2, 3, 4, 5, 6, 7], 4, 20);
 insertAt([1,2,3,4,5], 0, "X");
+
+// 4. RemoveAt
+function removeAt(arr, idx) {
+  if (arr.length < 1 || idx < 0) {
+    console.log("Array cannot be empty and index must not be negative.");
+    return false;
+  }
+  for (let i = 0; i < arr.length; i++) {
+    if (i === idx) {
+      console.log(arr[i]);
+      return arr[i];
+    }
+  }
+  console.log("Index value not present in array");
+  return false;
+}
+removeAt([1,2,3,4], 10);
+removeAt([1,2,3,4], -10);
+removeAt([1,2,3,4], 0);
+removeAt([1,2,3,4], 2);

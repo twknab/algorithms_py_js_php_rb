@@ -31,6 +31,7 @@ pop_front([1,2,3])
 
 # 3. Insert At
 def insert_at(arr, idx, val):
+  # Note: I know this is a long winded solution was just trying something with while loops.
   # If array is empty create a bunch of None values to the desired index provided:
   if len(arr) < 1:
     arr = [None] * (idx + 1)
@@ -55,4 +56,20 @@ insert_at([], 9, 9)
 insert_at([1,2,3], 1, 9)
 insert_at([1,2,3], -1, 19)
 insert_at([1,2,3,4,5,6,7], 4, 20)
+
+# 4. RemoveAt
+def remove_at(arr, idx):
+  if idx < 0 or len(arr) < 1:
+    print("Index must be positive value and list provided must not be empty")
+    return False
+  for i, val in enumerate(arr):
+    print("The value is: {}, The index is: {}, Index seeking: {}".format(val, i, idx))
+    if i == idx:
+      print(val)
+      return val
+  print("Index value does not exist in array")
+  return False
+remove_at([1,2,3,4], 2)
+remove_at([1,2,3,4], 4)
+
 
