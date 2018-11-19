@@ -24,4 +24,4 @@
 
 4. Remove At: Given an array and index of an array, remove and return the array value at that index. Do this without using any built-in methods except pop() (JS) if you can.
 
-5. Filter Range: Given an array and values min and max, remove array values between min and max. Work in plcae, return the array you are given witht eh values in original order. Try not to use any built in array functions if you can.
+5. Filter Range: Given an array and values min and max, remove array values between min and max. Work in plcae, return the array you are given with the values in original order. Try not to use any built in array functions if you can.

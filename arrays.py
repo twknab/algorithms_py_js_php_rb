@@ -75,13 +75,33 @@ remove_at([1, 2, 3, 4], 4)
 
 # 5. Filter Range
 def filter_range(arr, min, max):
-  for i, val in enumerate(arr):
-    if min <= val <= max:
-      # loop to end of array shifting values to the left
-  # examine array -- delete any duplicate values?
+  # Check if array empty
+  if len(arr) < 1:
+    print("Array contains no values")
+    return False
+  # Check if non-int types provided
+  if type(min) is not int or type(max) is not int:
+    print("Min and max values must be integers")
+    return False
+  # Loop through list looking for any vals within range
+  for i in range(len(arr) - 1, -1, -1):
+    # Check if any vals are not ints:
+    if type(arr[i]) is not int:
+      print("Array items must be integers only")
+      return False
+    # If val falls within range delete it from list
+    if min <= arr[i] <= max:
+      print("i is {} and val is {}".format(i, arr[i]))
+      del arr[i]
+  # Print and return original list now modified
   print(arr)
-
+  return arr
 filter_range([1, 2, 3, 4, 5], 2, 4)
+filter_range([1, 2, 3, 4, "Chiken"], 2, 4)
+filter_range([], 2, 4)
+filter_range([1.2], 2, 4)
+filter_range([-10, -10000, 500, 3, 1000, 1010, 4], 2, 4)
+filter_range([-10, -10000, 500, 3, 0, 1000, 1010, 4], -10, 4)
 
 
 
