@@ -78,3 +78,39 @@ removeAt([1,2,3,4], 10);
 removeAt([1,2,3,4], -10);
 removeAt([1,2,3,4], 0);
 removeAt([1,2,3,4], 2);
+
+// 5. FilterRange
+function filterRange(arr, min, max) {
+  // Check if array is empty
+  if (arr.length < 1) {
+    console.log("Array cannot be empty");
+    return false;
+  }
+  // Check if proper types for min and max
+  if (typeof(min) !== "number" || typeof(max) !== "number") {
+    console.log("Min and max variables must be a number");
+    return false;
+  }
+  // Loop backwars through array removing any values found within min and max range, while also returning false for entire algorithm if any non number types are found
+  for (let i = arr.length - 1; i >= 0; i--) {
+    // Check if iterated value is a number and integer only
+    if (typeof(arr[i]) !== "number" || arr[i] % 1 !== 0) {
+      console.log("Array may only contain integers");
+      return false;
+    }
+    if (arr[i] >= min && arr[i] <= max) {
+      arr.splice(i, 1);
+    }
+  }
+  // Print and return array:
+  console.log(arr);
+  // console.log(arr.length);
+  return arr;
+}
+filterRange([1, 2, 3, 4, 5], 2, 4);
+filterRange([1, 2, 3, 4, "Chiken"], 2, 4);
+// filterRange([1, 2, 3, 4, ""], 2, 4);
+filterRange([], 2, 4);
+filterRange([1.2], 2, 4);
+filterRange([-10, -10000, 500, 3, 1000, 1010, 4], 2, 4);
+filterRange([-10, -10000, 500, 3, 0, 1000, 1010, 4], -10, 4);
