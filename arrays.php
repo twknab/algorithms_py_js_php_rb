@@ -84,3 +84,36 @@ remove_at([1,2,3], 10);
 remove_at([1,2,3], 2);
 remove_at([1,2,3], 0);
 remove_at([1,2,3], -10);
+
+// 5. Filter Range
+function filter_range($arr, $min, $max) {
+  // Ensure array provided is not empty, return false if so:
+  if (sizeof($arr) < 1) {
+    echo "Array must not be empty" . "\n";
+    return FALSE;
+  }
+  // Check if min or max are not integers, return false if so:
+  if (gettype($min) !== "integer" || gettype($max) !== "integer" ) {
+    echo "Min and Max values must be integers only" . "\n";
+    return FALSE;
+  }
+  // Loop backwards through array, if any non-integer items are found return false. If any values between min and max (inclusive) are found, remove them from the array:
+  for ($i = sizeof($arr) - 1; $i >= 0; $i--) {
+    if (gettype($arr[$i]) !== "integer") {
+      echo "Array must contain integers only" . "\n";
+      return FALSE;
+    }
+    if ($arr[$i] >= $min && $arr[$i] <= $max) {
+      unset($arr[$i]);
+    }
+  }
+  // Print and return the array:
+  var_dump($arr);
+  return $arr;
+}
+filter_range([1, 2, 3, 4, 5], 2, 4);
+filter_range([1, 2, 3, 4, "Chiken"], 2, 4);
+filter_range([], 2, 4);
+filter_range([1.2], 2, 4);
+filter_range([-10, -10000, 500, 3, 1000, 1010, 4], 2, 4);
+filter_range([-10, -10000, 500, 3, 0, 1000, 1010, 4], -10, 4);
