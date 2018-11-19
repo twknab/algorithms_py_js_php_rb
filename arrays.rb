@@ -80,3 +80,34 @@ remove_at([1,2,3], 5)
 remove_at([1,2,3], 0)
 remove_at([1,2,3,10,12,15,20,25], 4)
 remove_at([1,2,3,10,12,15,20,25], -1)
+
+# 5. Filter Range
+def filter_range arr, min, max
+  if arr.empty?
+    puts "Array cannot be empty"
+    return false
+  end
+  unless min.is_a? Integer and max.is_a? Integer
+    puts "Min and max must be integers"
+    return false 
+  end
+  (arr.length - 1).downto(0) do |idx|
+    unless arr[idx].is_a? Integer
+      puts "Array items must be integers"
+      return false
+    end
+    if arr[idx].between?(min, max)
+      arr.delete_at(idx)
+    end
+  end
+  p arr
+  return arr
+end
+filter_range([1, 2, 3, 4, 5], 2, 4)
+filter_range([1,2,3,4], 1, 1.2)
+filter_range([1, 2, 3, 4, "Chiken"], 2, 4)
+filter_range([], 2, 4)
+filter_range([1.2], 2, 4)
+filter_range([-10, -10000, 500, 3, 1000, 1010, 4], 2, 4)
+filter_range([-10, -10000, 500, 3, 0, 1000, 1010, 4], -10, 4)
+filter_range([-10, -10000, 500, 3, 0, 1000, 1010, 4], -10, 4.2)

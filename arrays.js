@@ -87,8 +87,8 @@ function filterRange(arr, min, max) {
     return false;
   }
   // Check if proper types for min and max
-  if (typeof(min) !== "number" || typeof(max) !== "number") {
-    console.log("Min and max variables must be a number");
+  if (typeof(min) !== "number" || typeof(max) !== "number" || min % 1 !== 0 || max %1 !== 0) {
+    console.log("Min and max variables must be an integer");
     return false;
   }
   // Loop backwars through array removing any values found within min and max range, while also returning false for entire algorithm if any non number types are found
@@ -114,3 +114,4 @@ filterRange([], 2, 4);
 filterRange([1.2], 2, 4);
 filterRange([-10, -10000, 500, 3, 1000, 1010, 4], 2, 4);
 filterRange([-10, -10000, 500, 3, 0, 1000, 1010, 4], -10, 4);
+filterRange([-10, -10000, 500, 3, 0, 1000, 1010, 4], -10, 4.2);
