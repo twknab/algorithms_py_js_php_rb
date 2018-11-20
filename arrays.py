@@ -103,5 +103,21 @@ filter_range([1.2], 2, 4)
 filter_range([-10, -10000, 500, 3, 1000, 1010, 4], 2, 4)
 filter_range([-10, -10000, 500, 3, 0, 1000, 1010, 4], -10, 4)
 
-
-
+# 6. Concat
+def concat(arr1, arr2):
+  concatted = []
+  if type(arr1)is not list or type(arr2) is not list:
+    print("May only accept arrays as arguments")
+    return False
+  for i in arr1:
+    concatted.append(i)
+  for j in arr2:
+    concatted.append(j)
+  print(concatted)
+  return concatted
+concat(['a', 'b'], [1, 2])
+concat([], [1, 2])
+concat(['a', 'b'], [])
+concat('a', [])
+concat([], 'b')
+concat([1, 2, 3, 4, 5], ['a', 'b', 'c', 'd'])

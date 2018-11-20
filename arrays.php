@@ -117,3 +117,26 @@ filter_range([], 2, 4);
 filter_range([1.2], 2, 4);
 filter_range([-10, -10000, 500, 3, 1000, 1010, 4], 2, 4);
 filter_range([-10, -10000, 500, 3, 0, 1000, 1010, 4], -10, 4);
+
+// 6. Concat
+function concat($arr1, $arr2) {
+  $concatted = [];
+  if (gettype($arr1) !== "array" || gettype($arr2) !== "array") {
+    echo "Arrays are only arguments accepted" . "\n";
+    return FALSE;
+  }
+  foreach ($arr1 as $val) {
+    $concatted[] = $val;
+  }
+  foreach ($arr2 as $val) {
+    $concatted[] = $val;
+  }
+  var_dump($concatted);
+  return $concatted;
+}
+concat(['a', 'b'], [1, 2]);
+concat([], [1, 2]);
+concat(['a', 'b'], []);
+concat('a', []);
+concat([], 'b');
+concat([1, 2, 3, 4, 5], ['a', 'b', 'c', 'd']);

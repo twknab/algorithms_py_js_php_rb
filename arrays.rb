@@ -111,3 +111,25 @@ filter_range([1.2], 2, 4)
 filter_range([-10, -10000, 500, 3, 1000, 1010, 4], 2, 4)
 filter_range([-10, -10000, 500, 3, 0, 1000, 1010, 4], -10, 4)
 filter_range([-10, -10000, 500, 3, 0, 1000, 1010, 4], -10, 4.2)
+
+def concat arr1, arr2
+  concatted = []
+  unless arr1.is_a? Array and arr2.is_a? Array
+    puts "Only arrays are acceptable argument types"
+    return false
+  end
+  arr1.each do |val|
+    concatted << val
+  end
+  arr2.each do |val|
+    concatted << val
+  end
+  p concatted
+  return concatted
+end
+concat([1, 2], ['a', 'b'])
+concat([], [1, 2])
+concat(['a', 'b'], [])
+concat('a', [])
+concat([], 'b')
+concat([1, 2, 3, 4, 5], ['a', 'b', 'c', 'd'])

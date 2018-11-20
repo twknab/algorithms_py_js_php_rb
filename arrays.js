@@ -115,3 +115,30 @@ filterRange([1.2], 2, 4);
 filterRange([-10, -10000, 500, 3, 1000, 1010, 4], 2, 4);
 filterRange([-10, -10000, 500, 3, 0, 1000, 1010, 4], -10, 4);
 filterRange([-10, -10000, 500, 3, 0, 1000, 1010, 4], -10, 4.2);
+
+function concat(arr1, arr2) {
+  // Create empty array which we'll return with our arrays concatted
+  let concatted = [];
+  // If non-arrays are supplied as arguments return false
+  if (!Array.isArray(arr1) || !Array.isArray(arr2)) {
+    console.log("Arrays are only acceptable argument types");
+    return false;
+  }
+  // Loop through array 1 and push values to concatted
+  for (let i = 0; i < arr1.length; i++) {
+    concatted.push(arr1[i]);
+  }
+  // Loop through array2 and push values to concatted
+  for (let i = 0; i < arr2.length; i++) {
+    concatted.push(arr2[i]);
+  }
+  // Log and return concatted array
+  console.log(concatted);
+  return concatted;
+}
+concat(['a', 'b'], [1, 2]);
+concat([], [1, 2]);
+concat(['a', 'b'], []);
+concat('a', []);
+concat([], 'b');
+concat([1, 2, 3, 4, 5], ['a', 'b', 'c', 'd']);
