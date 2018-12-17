@@ -121,3 +121,18 @@ concat(['a', 'b'], [])
 concat('a', [])
 concat([], 'b')
 concat([1, 2, 3, 4, 5], ['a', 'b', 'c', 'd'])
+
+# 6. Sort
+def sort(arr):
+  max = arr[0]
+  for i, val in enumerate(arr):
+    if val > max:
+      temp = arr[len(arr) - 1]
+      max = val
+      arr[len(arr)-1] = max
+  print arr
+  return arr
+
+sort([1, 3, 2])
+
+# [1, 3, 5, 0]

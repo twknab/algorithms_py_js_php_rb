@@ -27,3 +27,5 @@
 5. Filter Range: Given an array and values min and max, remove array values between min and max. Work in plcae, return the array you are given with the values in original order. Try not to use any built in array functions if you can.
 
 6. Concat: Replicate javascript's concat() function. Create a function which accepts two arrays, and return a new array contianing the first array's elements followed by the second array's elements. Do not alter the original array. E.g, ['a', 'b'], [1, 2] would return a new array: ['a', 'b', 1, 2]
+
+7. Sort: Given an array, sort it from least to greatest.
