@@ -29,3 +29,29 @@
 6. Concat: Replicate javascript's concat() function. Create a function which accepts two arrays, and return a new array contianing the first array's elements followed by the second array's elements. Do not alter the original array. E.g, ['a', 'b'], [1, 2] would return a new array: ['a', 'b', 1, 2]
 
 7. Sort: Given an array, sort it from least to greatest.
+
+## Queues
+
+1. Enqueue: create a method called enqueue which adds a given value to the end of our queue.
+
+2. Front: return the front of a queues's value without removing it.
+
+3. isEmpty(): create a method which returns wehther our queue contains no values
+
+4. Compare queues: create a function, if given 2 queues, returns whether they are equal. They are only equal if they have elements in identical order. Don't create any other objects or alter the original queues
+
+5. Dequeue: remove and return value at the front of a queue
+
+6. Contains:  Size: return the number of values in the queue
+
+7. Size: return the number of values in the queue
+
+8. RemoveMin: remove the queues lowest value and any duplicates of that value, return the modified queue
+
+9. Interleave Queue: interweave the first and second half of a queue
+
+## Recursion
+
+1. Recursive Sigma: write a function that givena  number returns the sum of integers from 1 to that number.
+
+2. Recursive factorial: Given a number, return the product of integers from 1 up to that number.
